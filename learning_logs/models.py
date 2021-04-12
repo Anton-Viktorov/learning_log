@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
 
 class Topic(models.Model):
     """ Topic which user is learn """
@@ -12,6 +11,7 @@ class Topic(models.Model):
     def __str__(self):
         """ Returns string representation of the model"""
         return self.text
+
 
 class Entry(models.Model):
     """ information that has been learned by the user on whe topic """

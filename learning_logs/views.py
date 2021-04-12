@@ -5,8 +5,6 @@ from .forms import TopicForm, EntryForm
 from django.http import Http404
 
 
-# Create your views here.
-
 def index(request):
     """ Home page Learning Log app """
     return render(request, 'learning_logs/index.html')
@@ -55,6 +53,7 @@ def new_topic(request):
 @login_required
 def new_entry(request, topic_id):
     """Add new entry for specific theme"""
+
     topic = Topic.objects.get(id=topic_id)
     if topic.owner != request.user:
         raise Http404
